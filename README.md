@@ -146,6 +146,10 @@ Take a look at the out put of the following to learn more about what is availabl
 echo "show stat" | socat /var/run/haproxy/info.sock stdio
 ```
 
+### Forked Romantico88 
+
+Added trigger prototypes for backends, server and frontends. Will triggered when frontend/backend/backend's sever will not run and when haproxy are running (to prevent case, when haproxy are not running and zabbix will send notification for all objects form haproxy).
+
 ### License
 
 [MIT License](http://opensource.org/licenses/MIT)
