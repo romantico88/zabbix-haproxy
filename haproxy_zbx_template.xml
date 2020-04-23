@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.2</version>
-    <date>2020-04-21T12:51:15Z</date>
+    <date>2020-04-23T11:52:33Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -1036,7 +1036,7 @@
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>365d</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units>req</units>
@@ -1108,7 +1108,7 @@
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>365d</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units>resp</units>
@@ -1179,7 +1179,7 @@
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>365d</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units>conn</units>
@@ -1249,7 +1249,7 @@
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>365d</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units>resp</units>
@@ -1322,7 +1322,7 @@ Some other errors are:
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>0</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
@@ -1385,7 +1385,7 @@ Some other errors are:
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>0</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
@@ -1448,7 +1448,7 @@ Some other errors are:
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>0</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
@@ -1511,7 +1511,7 @@ Some other errors are:
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>0</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
@@ -1574,7 +1574,7 @@ Some other errors are:
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>0</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
@@ -1637,7 +1637,7 @@ Some other errors are:
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>0</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
@@ -2848,7 +2848,7 @@ Some other errors are:
                             <delay>60</delay>
                             <history>90d</history>
                             <trends>365d</trends>
-                            <status>1</status>
+                            <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units>conn</units>
@@ -2968,7 +2968,7 @@ Some other errors are:
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{HAProxy:haproxy.stats[{$HAPROXY_SOCK},{#BACKEND_NAME},BACKEND,status].str(UP)}=0</expression>
+                            <expression>{HAProxy:haproxy.stats[{$HAPROXY_SOCK},{#BACKEND_NAME},BACKEND,status].str(UP)}=0 and {HAProxy:proc.num[haproxy].last()}=1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Backend {#BACKEND_NAME} is marked as DOWN!</name>
@@ -5952,7 +5952,7 @@ Some other errors are:
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{HAProxy:haproxy.stats[{$HAPROXY_SOCK},{#FRONTEND_NAME},FRONTEND,status].str(OPEN)}=0</expression>
+                            <expression>{HAProxy:haproxy.stats[{$HAPROXY_SOCK},{#FRONTEND_NAME},FRONTEND,status].str(OPEN)}=0 and {HAProxy:proc.num[haproxy].last()}=1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Frontend {#FRONTEND_NAME} is marked as DOWN!</name>
@@ -9792,7 +9792,7 @@ Some other errors are:
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{HAProxy:haproxy.stats[{$HAPROXY_SOCK},{#BACKEND_NAME},{#SERVER_NAME},status].str(UP)}=0</expression>
+                            <expression>{HAProxy:haproxy.stats[{$HAPROXY_SOCK},{#BACKEND_NAME},{#SERVER_NAME},status].str(UP)}=0 and {HAProxy:proc.num[haproxy].last()}=1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Server {#SERVER_NAME} from backend {#BACKEND_NAME} is marked as DOWN!</name>
